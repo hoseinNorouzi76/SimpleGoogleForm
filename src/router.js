@@ -45,6 +45,7 @@ const binarySearch = (data, target, start, end) => {
 router.post('/addNewForm', (req, res) =>
   upload(req, res, err => {
     if (err) console.log(err)
+    console.log('new req')
     database
       .addForm(JSON.parse(req.body.data))
       .then(({ _id }) => {
